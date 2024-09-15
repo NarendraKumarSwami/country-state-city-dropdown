@@ -1,0 +1,7 @@
+# npmignore
+.npmignore
+
+# folders
+build/
+dist/
+node_modules/
