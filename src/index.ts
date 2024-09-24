@@ -1,13 +1,19 @@
-import { Country, State, City } from "country-state-city";
+import { countries, states, cities } from "./data/locations";
+import { Country, State, City } from "./types/locations";
 
-export const getCountries = () => {
-  return Country.getAllCountries();
+export const getCountries = (): Country[] => {
+  return countries;
 };
 
-export const getStatesByCountry = (countryCode: string) => {
-  return State.getStatesOfCountry(countryCode);
+export const getStatesByCountry = (countryCode: string): State[] => {
+  return states.filter((state) => state.countryCode === countryCode);
 };
 
-export const getCitiesByState = (countryCode: string, stateCode: string) => {
-  return City.getCitiesOfState(countryCode, stateCode);
+export const getCitiesByState = (
+  countryCode: string,
+  stateCode: string
+): City[] => {
+  return cities.filter(
+    (city) => city.stateCode === stateCode && city.countryCode === countryCode
+  );
 };
