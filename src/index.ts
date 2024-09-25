@@ -1,4 +1,6 @@
-import { countries, states, cities } from "./data/locations";
+import { countries } from "./data/location.country";
+import { states } from "./data/location.state";
+import { cities } from "./data/locations.cities";
 import { Country, State, City } from "./types/locations";
 
 export const getCountries = (): Country[] => {
